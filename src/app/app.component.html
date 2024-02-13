@@ -1,0 +1,12 @@
+<div class="container">
+  <nav>
+    <div class="nav-brand" routerLink="/insurance">Insurance App</div>
+    <div class="nav-items">
+      <span *ngIf="authService.isLoggedIn">Welcome, {{ authService.getUsername() }}!</span>
+      <a routerLink="/login" *ngIf="!authService.isLoggedIn">Login</a>
+      <a routerLink="/payment" *ngIf="authService.isLoggedIn">Pay Premium</a> 
+      <button class="button" *ngIf="authService.isLoggedIn" (click)="logout()">Logout</button>
+    </div>
+  </nav>
+  <router-outlet></router-outlet>
+</div>
